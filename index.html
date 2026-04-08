@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>قطرات ARK — طاقة طبيعية في ٣ ثوانٍ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Preload HERO images only (no loading=lazy on these two) -->
+<link rel="preload" as="image" href="./images/8.webp">
+<link rel="preload" as="image" href="./images/9.webp">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:#fff;color:#111;font-family:'Noto Kufi Arabic',Cairo,sans-serif;direction:rtl;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px}
+img{display:block;max-width:100%}
+
+/* ── TOPBAR ── */
+.topbar{position:sticky;top:0;z-index:999;background:#111;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid #222}
+.topbar-logo img{height:32px;width:auto;object-fit:contain;display:block}
+.topbar-btn{background:#52b788;color:#fff;font-size:13px;font-weight:800;padding:9px 18px;border-radius:100px;border:none;font-family:'Noto Kufi Arabic',Cairo,sans-serif;cursor:pointer;white-space:nowrap;animation:btnPulse 2.5s ease infinite}
+@keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(82,183,136,.5)}50%{box-shadow:0 0 0 8px rgba(82,183,136,0)}}
+
+/* ── ANNOUNCEMENT ── */
+.ann{background:#1a1a1a;text-align:center;padding:8px 14px;font-size:12px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.ann em{color:#74c69d;font-style:normal}
+
+/* ── HERO ── */
+.hero-img-wrap{position:relative;width:100%;height:80vw;max-height:430px;overflow:hidden;background:#0d1f17}
+.hero-img-split{display:grid;grid-template-columns:1fr 1fr;height:100%;width:100%}
+.his-item{position:relative;overflow:hidden}
+.his-item img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.his-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);color:#fff;font-size:12px;font-weight:700;padding:24px 12px 10px;text-align:center}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.05),rgba(0,0,0,.35));pointer-events:none;z-index:2}
+.hero-img-badge{position:absolute;bottom:14px;right:14px;background:rgba(255,255,255,.95);border-radius:10px;padding:8px 12px;z-index:3}
+.hib-val{font-size:16px;font-weight:900;color:#2d6a4f;line-height:1}
+.hib-lbl{font-size:10px;color:#888;margin-top:1px}
+.hero-img-badge2{position:absolute;bottom:14px;left:14px;background:rgba(255,255,255,.95);border-radius:10px;padding:8px 12px;z-index:3}
+
+/* ── HERO TEXT ── */
+.hero-text{padding:24px 16px 0}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;background:#f0faf5;border:1px solid #b7e4c7;border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;color:#2d6a4f;margin-bottom:14px}
+.hero-h1{font-size:clamp(26px,8vw,42px);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#111;margin-bottom:10px}
+.hero-h1 em{color:#2d6a4f;font-style:normal;display:block}
+.hero-tagline{font-family:'Noto Naskh Arabic',serif;font-size:15px;color:#555;line-height:2;margin-bottom:14px}
+.hero-rating{display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.stars{color:#f4a61e;font-size:16px;letter-spacing:1px}
+.rtext{font-size:12px;color:#999}
+.rtext strong{color:#111}
+.hero-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.hpill{background:#f7f4ef;border:1.5px solid #e8e4dc;border-radius:100px;padding:5px 12px;font-size:11px;color:#555;font-weight:600}
+
+/* ── ORDER BOX ── */
+.obox{margin:0 16px 8px;background:#fff;border:2px solid #e8e4dc;border-radius:18px;overflow:hidden;box-shadow:0 4px 32px rgba(0,0,0,.1)}
+.obox-header{background:#111;padding:13px 16px;text-align:center}
+.oh1{font-size:12px;font-weight:700;color:#52b788;margin-bottom:2px}
+.oh2{font-size:15px;font-weight:800;color:#fff}
+.obox-body{padding:16px}
+
+/* ── CVR COMPACT ── */
+.cvr-compact{background:#f7f4ef;border-radius:10px;padding:10px 12px;margin-bottom:14px}
+.cvr-row-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+.cvr-live{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#1a4731}
+.lp-dot{width:7px;height:7px;background:#1f7a46;border-radius:50%;flex-shrink:0;display:inline-block;animation:pulse-dot 1.5s ease infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+.cvr-timer{font-size:13px;font-weight:800;color:#e85d04;letter-spacing:1px;font-variant-numeric:tabular-nums}
+.stock-track{height:5px;background:#e8e4dc;border-radius:100px;overflow:hidden;margin:4px 0 3px}
+.stock-fill{height:100%;background:linear-gradient(90deg,#e85d04,#f4a61e);border-radius:100px;transition:width .3s}
+.cvr-stock-note{font-size:11px;color:#666;font-weight:600;text-align:center}
+
+/* ── PACKAGES ── */
+.pkgs{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.pkg{border:2px solid #e8e4dc;border-radius:12px;padding:12px 14px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;background:#fff;position:relative;transition:border-color .2s,background .2s,box-shadow .2s}
+.pkg.sel{border-color:#2d6a4f;background:#f0faf5;box-shadow:0 0 0 3px rgba(45,106,79,.12)}
+.pkg-badge{position:absolute;top:-9px;right:12px;border-radius:100px;font-size:10px;font-weight:800;padding:2px 10px}
+.bg1{background:#2d6a4f;color:#fff}
+.bg2{background:#e85d04;color:#fff}
+.pkg-l{display:flex;align-items:center;gap:10px}
+.pkg-radio{width:18px;height:18px;border-radius:50%;border:2px solid #ddd;flex-shrink:0;position:relative;transition:all .15s}
+.pkg.sel .pkg-radio{border-color:#2d6a4f;background:#2d6a4f}
+.pkg.sel .pkg-radio::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:7px;height:7px;background:#fff;border-radius:50%}
+.pkg-name{font-size:14px;font-weight:700;color:#111}
+.pkg-desc{font-size:11px;color:#999;margin-top:1px}
+.pkg-r{text-align:left;flex-shrink:0}
+.pkg-price{font-size:17px;font-weight:900;color:#2d6a4f}
+.pkg-old{font-size:10px;color:#ccc;text-decoration:line-through}
+.pkg-save{font-size:10px;color:#e85d04;font-weight:700}
+
+/* ── FORM ── */
+.fgroup{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.finput{width:100%;background:#f7f4ef;border:1.5px solid #e8e4dc;border-radius:12px;padding:15px 16px;font-size:16px;color:#111;font-family:'Noto Kufi Arabic',Cairo,sans-serif;direction:rtl;-webkit-appearance:none;appearance:none;transition:border-color .2s,background .2s;min-height:52px}
+.finput:focus{outline:none;border-color:#2d6a4f;background:#fff;box-shadow:0 0 0 3px rgba(45,106,79,.08)}
+.finput::placeholder{color:#bbb}
+.finput.error{border-color:#ef4444;background:#fff8f8}
+.fsel{background:#f7f4ef url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%232d6a4f' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat left 14px center;-webkit-appearance:none;appearance:none}
+.ferr{color:#dc2626;font-size:12px;margin-top:4px;display:none;font-family:'Noto Naskh Arabic',serif;text-align:right;line-height:1.5}
+.ferr.show{display:block}
+
+/* ── SUBMIT ── */
+.sbtn{width:100%;background:#1f7a46;border:none;border-radius:12px;padding:16px 20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:ctaPulse 2s ease infinite}
+@keyframes ctaPulse{0%,100%{box-shadow:0 4px 18px rgba(31,122,70,.35)}50%{box-shadow:0 4px 28px rgba(31,122,70,.55)}}
+.sbtn:active{transform:scale(.97);animation:none}
+.sbtn-main{font-family:'Noto Kufi Arabic',Cairo,sans-serif;font-size:18px;font-weight:800;color:#fff}
+.sbtn-sub{font-family:'Noto Kufi Arabic',Cairo,sans-serif;font-size:11px;color:rgba(255,255,255,.8);margin-top:3px}
+.sbtn:disabled{opacity:.7;animation:none;cursor:not-allowed}
+.ftrust{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:10px}
+.fti{display:flex;align-items:center;gap:4px;font-size:11px;color:#aaa}
+.ftic{color:#2d6a4f}
+.cvr-guarantee{background:#f0faf5;border:1px solid #b7e4c7;border-radius:8px;padding:10px 12px;font-size:12px;font-weight:700;color:#1a4731;text-align:center;margin-top:10px}
+
+/* ── SUCCESS ── */
+.success-msg{display:none;margin:16px 12px;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.12)}
+.suc-top{background:linear-gradient(135deg,#1f7a46,#2d6a4f);padding:32px 20px 24px;text-align:center}
+.sicon{font-size:64px;margin-bottom:10px;display:block;animation:popIn .5s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.st{font-size:24px;font-weight:900;color:#fff;margin-bottom:4px}
+.st-sub{font-family:'Noto Naskh Arabic',serif;font-size:14px;color:rgba(255,255,255,.75);margin-top:2px}
+.suc-call{background:#fff;padding:22px 18px;border-bottom:2px dashed #e8e4dc}
+.suc-call-title{font-size:17px;font-weight:900;color:#111;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:6px}
+.suc-call-body{font-family:'Noto Naskh Arabic',serif;font-size:14px;color:#444;line-height:2;text-align:center}
+.suc-call-body strong{color:#1f7a46}
+.suc-warning{background:#fff8f0;padding:14px 18px;border-right:4px solid #f59e0b;border-radius:0 8px 8px 0;margin:14px 18px;font-family:'Noto Naskh Arabic',serif;font-size:13px;color:#92400e;line-height:1.8;text-align:right}
+.suc-phone-note{font-family:'Noto Naskh Arabic',serif;font-size:13px;color:#2d6a4f;text-align:center;margin-top:12px;font-weight:600;padding-bottom:18px}
+
+/* ── TRUST ROW ── */
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);background:#f7f4ef;border-top:1px solid #e8e4dc;border-bottom:1px solid #e8e4dc}
+.tri{padding:14px 8px;text-align:center}
+.tri-icon{font-size:20px;margin-bottom:4px}
+.tri-t{font-size:10px;color:#666;font-weight:600;line-height:1.3}
+
+/* ── PROOF NUMBERS ── */
+.proof{background:#111;display:grid;grid-template-columns:repeat(2,1fr)}
+.pi{padding:18px 10px;text-align:center;border-left:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
+.pi:nth-child(2){border-left:none}
+.pi:nth-child(3){border-bottom:none}
+.pi:nth-child(4){border-left:none;border-bottom:none}
+.pin{font-size:26px;font-weight:900;color:#52b788;line-height:1;margin-bottom:3px}
+.pil{font-size:11px;color:#555}
+
+/* ── SECTIONS ── */
+.sec{padding:48px 16px}
+.slbl{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2d6a4f;margin-bottom:8px;text-align:center}
+.stit{font-size:clamp(22px,6vw,34px);font-weight:900;line-height:1.2;color:#111;margin-bottom:10px;letter-spacing:-.5px;text-align:center}
+.stit em{color:#2d6a4f;font-style:normal}
+.ssub{font-family:'Noto Naskh Arabic',serif;font-size:14px;color:#999;line-height:2;text-align:center}
+
+/* ── LIFESTYLE ── */
+.lifestyle-full{background:#f7f4ef}
+.lifestyle-img{width:100%;height:62vw;max-height:420px;object-fit:cover;object-position:center 30%}
+.lifestyle-caption{padding:28px 16px}
+.lc-title{font-size:clamp(20px,6vw,30px);font-weight:900;line-height:1.25;color:#111;margin-bottom:10px;letter-spacing:-.5px}
+.lc-title em{color:#2d6a4f;font-style:normal}
+.lc-body{font-family:'Noto Naskh Arabic',serif;font-size:14px;color:#777;line-height:2;margin-bottom:16px}
+.lc-checks{display:flex;flex-direction:column;gap:10px}
+.lc-check{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:#333}
+.lc-check::before{content:'✓';width:20px;height:20px;background:#2d6a4f;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+
+/* ── PRODUCT FEATURE IMAGE ── */
+.prod-feature{width:100%;max-width:480px;margin:0 auto;border-radius:16px;overflow:hidden}
+.prod-feature img{width:100%;display:block}
+
+/* ── HOW TO USE ── */
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.step{background:#f7f4ef;border-radius:14px;padding:18px 14px;text-align:center}
+.step-n{font-size:36px;font-weight:900;color:#e8e4dc;line-height:1;margin-bottom:6px}
+.step-icon{font-size:28px;margin-bottom:6px}
+.step-t{font-size:13px;font-weight:700;color:#111;margin-bottom:4px}
+.step-d{font-family:'Noto Naskh Arabic',serif;font-size:11px;color:#aaa;line-height:1.7}
+
+/* ── COMPARISON ── */
+.comp-table{width:100%;border-collapse:collapse;margin-top:24px;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.07)}
+.comp-table th{padding:12px 10px;font-size:12px;font-weight:800;text-align:center}
+.comp-table th:first-child{text-align:right;width:38%}
+.comp-table th.col-ark{background:#2d6a4f;color:#fff}
+.comp-table th.col-other{background:#555;color:#ccc}
+.comp-table th.col-label{background:#111;color:#888}
+.comp-table td{padding:10px;font-size:12px;text-align:center;border-bottom:1px solid #f0ede8}
+.comp-table td:first-child{text-align:right;font-weight:600;color:#444;padding-right:12px}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:nth-child(even) td{background:#fafaf8}
+.comp-table .yes{color:#1f7a46;font-weight:800;font-size:13px}
+.comp-table .no{color:#ef4444;font-size:13px}
+
+/* ── BENEFITS ── */
+.ben-wrap{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.bcard{background:#f7f4ef;border-radius:14px;padding:18px 16px;display:flex;align-items:flex-start;gap:14px}
+.bcard-icon{font-size:26px;flex-shrink:0;margin-top:2px}
+.bcard-t{font-size:14px;font-weight:700;color:#111;margin-bottom:4px}
+.bcard-d{font-family:'Noto Naskh Arabic',serif;font-size:13px;color:#888;line-height:1.8}
+
+/* ── FOR YOU SECTION (image 3) ── */
+.for-you-img{width:100%;border-radius:16px;overflow:hidden;margin-top:20px}
+.for-you-img img{width:100%;display:block}
+
+/* ── TIKTOK ── */
+.tt-section{background:#111;padding:44px 16px}
+.tt-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.tt-card{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:9/16;background:#1a1a2e}
+.tt-card img{width:100%;height:100%;object-fit:cover}
+.tt-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.1) 60%,transparent)}
+.tt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.tt-play svg{width:18px;height:18px;fill:#fff;margin-right:-2px}
+.tt-bottom{position:absolute;bottom:0;left:0;right:0;padding:12px;z-index:2}
+.tt-name{font-size:12px;font-weight:700;color:#fff}
+.tt-sub{font-size:10px;color:rgba(255,255,255,.5);margin-top:1px}
+.tt-logo{position:absolute;top:10px;left:10px;z-index:2}
+.tt-logo svg{width:18px;height:18px;fill:#fff}
+
+/* ── TESTIMONIALS ── */
+.t-list{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.tcard{background:#fff;border:1.5px solid #f0ede8;border-radius:14px;padding:18px;position:relative}
+.tcard-verified{position:absolute;top:14px;left:14px;font-size:10px;color:#2d6a4f;font-weight:700}
+.tcard-stars{color:#f4a61e;font-size:14px;margin-bottom:8px}
+.tcard-text{font-family:'Noto Naskh Arabic',serif;font-size:14px;color:#555;line-height:1.9;margin-bottom:10px}
+.tcard-author{font-size:12px;font-weight:700;color:#111}
+.tcard-loc{font-size:11px;color:#2d6a4f;margin-top:2px}
+
+/* ── INGREDIENTS ── */
+.ing-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.ipill{background:#f0faf5;border:1.5px solid #b7e4c7;border-radius:100px;padding:7px 14px;font-size:12px;color:#2d6a4f;font-weight:600}
+
+/* ── BEFORE/AFTER ── */
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+.ba-card{border-radius:12px;overflow:hidden}
+.ba-header{padding:8px 10px;font-size:12px;font-weight:800;text-align:center}
+.ba-before .ba-header{background:#fee2e2;color:#b91c1c}
+.ba-after .ba-header{background:#dcfce7;color:#166534}
+.ba-items{padding:10px 12px;display:flex;flex-direction:column;gap:7px;background:#fff;border:1.5px solid #f0ede8;border-top:none;border-radius:0 0 12px 12px}
+.ba-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#555;font-family:'Noto Naskh Arabic',serif;line-height:1.4}
+.ba-before .ba-item::before{content:'✗';color:#ef4444;font-weight:900;flex-shrink:0;font-size:11px}
+.ba-after .ba-item::before{content:'✓';color:#1f7a46;font-weight:900;flex-shrink:0;font-size:11px}
+
+/* ── FAQ ── */
+.faqlist{display:flex;flex-direction:column;margin-top:20px}
+.faqitem{border-bottom:1.5px solid #f0ede8}
+.faqbtn{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:16px 0;text-align:right;color:#111;font-family:'Noto Kufi Arabic',Cairo,sans-serif;font-size:14px;font-weight:700;gap:12px}
+.faqch{color:#2d6a4f;font-size:22px;font-weight:300;flex-shrink:0;line-height:1;transition:transform .2s}
+.faqch.open{transform:rotate(45deg)}
+.faqans{display:none;font-family:'Noto Naskh Arabic',serif;font-size:13px;color:#888;line-height:2;padding-bottom:14px}
+
+/* ── BOTTOM CTA ── */
+.cta-sec{background:#111;padding:52px 16px;text-align:center}
+.cta-lbl{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#52b788;margin-bottom:12px}
+.cta-title{font-size:clamp(24px,7vw,40px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px;letter-spacing:-.5px}
+.cta-title em{color:#52b788;font-style:normal}
+.cta-sub{font-family:'Noto Naskh Arabic',serif;font-size:14px;color:#555;margin-bottom:24px;line-height:2}
+.ctabtn{display:block;width:100%;background:#52b788;color:#fff;font-size:16px;font-weight:800;padding:17px;border-radius:14px;border:none;cursor:pointer;font-family:'Noto Kufi Arabic',Cairo,sans-serif;animation:ctaPulse 2s ease infinite}
+
+/* ── FOOTER ── */
+.footer{background:#0a0a0a;padding:20px 16px 90px;text-align:center}
+.ftrust-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.fti2{font-size:11px;color:#333;display:flex;align-items:center;gap:4px}
+.fti2 span{color:#52b788}
+.fcopy{font-size:10px;color:#222;margin-top:4px}
+
+/* ── STICKY BUY ── */
+.sticky-buy{position:fixed;bottom:0;left:0;right:0;z-index:998;background:#fff;border-top:2px solid #e8e4dc;padding:10px 16px 18px;box-shadow:0 -6px 24px rgba(0,0,0,.12)}
+.sticky-buy-btn{width:100%;background:#1f7a46;border:none;border-radius:12px;padding:14px 20px;font-size:15px;font-weight:800;color:#fff;cursor:pointer;font-family:'Noto Kufi Arabic',Cairo,sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 14px rgba(31,122,70,.4)}
+.sticky-buy-btn:active{background:#2d6a4f;transform:scale(.98)}
+.sticky-buy-sub{text-align:center;font-size:11px;color:#aaa;margin-top:5px}
+
+/* ── POPUP (z:990, sits below sticky bar z:998) ── */
+.notif{position:fixed;bottom:90px;left:16px;right:16px;background:#fff;border:1.5px solid #e8e4dc;border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 20px rgba(0,0,0,.1);z-index:990;transform:translateY(100px);opacity:0;transition:transform .4s ease,opacity .4s ease;pointer-events:none}
+.notif.show{transform:translateY(0);opacity:1}
+.notif-dot{width:8px;height:8px;background:#1f7a46;border-radius:50%;flex-shrink:0;animation:pulse-dot 1.5s ease infinite}
+.notif-text{flex:1;font-size:12px;font-weight:600;color:#111;line-height:1.4}
+.notif-time{font-size:10px;color:#bbb;flex-shrink:0}
+
+/* ── PHOTO GRID ── */
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.photo-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;object-position:center}
+.photo-grid .wide{grid-column:span 2;aspect-ratio:16/9}
+
+/* ── DESKTOP ── */
+@media(min-width:768px){
+  .hero-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:90vh}
+  .hero-img-wrap{height:100%;max-height:none}
+  .hero-text{padding:52px 40px 0;display:flex;flex-direction:column;justify-content:center}
+  .obox{margin:24px 40px 0}
+  .trust-row,.proof{grid-template-columns:repeat(4,1fr)}
+  .pi{border-bottom:none}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .ben-wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+  .bcard{flex-direction:column}
+  .tt-grid{grid-template-columns:repeat(4,1fr)}
+  .t-list{display:grid;grid-template-columns:repeat(3,1fr)}
+  .lifestyle-full{display:grid;grid-template-columns:1fr 1fr}
+  .sticky-buy{display:none !important}
+  .notif{max-width:360px;left:24px;right:auto;bottom:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="ann">
+  🇸🇪 مصنوع في السويد &nbsp;·&nbsp;
+  <em>شحن مجاني</em> &nbsp;·&nbsp;
+  🔥 تبقّى <strong id="stock-num" style="color:#f4a61e">37</strong> قطعة &nbsp;·&nbsp;
+  ⏳ <span style="color:#f4a61e;font-variant-numeric:tabular-nums"><span id="cdh2">23</span>:<span id="cdm2">59</span>:<span id="cds2">00</span></span>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-logo">
+    <img fetchpriority="high" src="./images/10.webp" alt="ARK Drops" style="height:38px;width:auto;object-fit:contain;border-radius:6px">
+  </div>
+  <button class="topbar-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">اطلب الآن ←</button>
+</div>
+
+<!-- ══ HERO ══ -->
+<div class="hero-wrap" id="top">
+  <div class="hero-img-wrap">
+    <div class="hero-img-split">
+      <div class="his-item">
+        <!-- image 8: gym man — strong, high-energy -->
+        <img fetchpriority="high" src="./images/8.webp" alt="ARK Drops gym man">
+        <div class="his-label">في الجيم 💪</div>
+      </div>
+      <div class="his-item">
+        <!-- image 9: suit guy social event -->
+        <img fetchpriority="high" src="./images/9.webp" alt="ARK Drops social event">
+        <div class="his-label">في كل مناسبة ✨</div>
+      </div>
+    </div>
+    <div class="hero-img-overlay"></div>
+    <div class="hero-img-badge">
+      <div class="hib-val">+٢٠٠K</div>
+      <div class="hib-lbl">زجاجة مُباعة</div>
+    </div>
+    <div class="hero-img-badge2">
+      <div class="hib-val">٣ ث</div>
+      <div class="hib-lbl">وقت التأثير</div>
+    </div>
+  </div>
+
+  <div class="hero-text">
+    <div class="hero-eyebrow">🌿 Natural Performance Booster</div>
+    <h1 class="hero-h1">
+      طاقة فورية. تنفّس أعمق.
+      <em>تركيز لا يُقهر.</em>
+    </h1>
+    <p class="hero-tagline">قطرات طبيعية تحت اللسان — تحسّ بالفرق في ٣ ثوانٍ. بدون كافيين. بدون سكر. بدون انهيار.</p>
+    <div class="hero-rating">
+      <span class="stars">★★★★★</span>
+      <span class="rtext"><strong>٤٫٥</strong>/٥ · <strong>١٧٣٨</strong> تقييم</span>
+    </div>
+    <div class="hero-pills">
+      <span class="hpill">⚡ ٣ ثوانٍ</span>
+      <span class="hpill">🌿 طبيعي ١٠٠٪</span>
+      <span class="hpill">🚫 بدون كافيين</span>
+      <span class="hpill">✅ ١٢٠ جرعة</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ORDER FORM ══ -->
+<div id="order">
+  <div class="obox">
+    <div class="obox-header">
+      <div class="oh1">⏳ عرض محدود — شحن مجاني لجميع مناطق السعودية</div>
+      <div class="oh2">اختر باقتك واطلب الآن</div>
+    </div>
+    <div class="obox-body">
+      <div class="cvr-compact">
+        <div class="cvr-row-top">
+          <div class="cvr-live"><span class="lp-dot"></span>&nbsp;👁 <span id="viewers">14</span> يشاهدون الآن</div>
+          <div class="cvr-timer">⏳ <span id="cdh">23</span>:<span id="cdm">59</span>:<span id="cds">00</span></div>
+        </div>
+        <div class="stock-track"><div class="stock-fill" id="stock-fill" style="width:18%"></div></div>
+        <div class="cvr-stock-note">📦 تبقّى <strong id="stock-left">37</strong> قطعة من أصل ٢٠٠ — يُباع بسرعة</div>
+      </div>
+
+      <div class="pkgs">
+        <div class="pkg" id="pkg1" onclick="selPkg(1)">
+          <div class="pkg-l">
+            <div class="pkg-radio" id="r1"></div>
+            <div><div class="pkg-name">🥉 زجاجة واحدة</div><div class="pkg-desc">١٢٠ جرعة · شهران</div></div>
+          </div>
+          <div class="pkg-r"><div class="pkg-price">١٨٩ ر.س</div></div>
+        </div>
+        <div class="pkg sel" id="pkg2" onclick="selPkg(2)">
+          <div class="pkg-badge bg1">⭐ الأكثر شعبية</div>
+          <div class="pkg-l">
+            <div class="pkg-radio" id="r2"></div>
+            <div><div class="pkg-name">🥈 باقة زجاجتين</div><div class="pkg-desc">٢٤٠ جرعة · ٤ أشهر</div></div>
+          </div>
+          <div class="pkg-r">
+            <div class="pkg-price">٢٩٩ ر.س</div>
+            <div class="pkg-old">٣٧٨ ر.س</div>
+            <div class="pkg-save">وفّر ٢١٪</div>
+          </div>
+        </div>
+        <div class="pkg" id="pkg3" onclick="selPkg(3)">
+          <div class="pkg-badge bg2">🔥 أفضل قيمة</div>
+          <div class="pkg-l">
+            <div class="pkg-radio" id="r3"></div>
+            <div><div class="pkg-name">🥇 باقة ٣ زجاجات</div><div class="pkg-desc">٣٦٠ جرعة · ٦ أشهر</div></div>
+          </div>
+          <div class="pkg-r">
+            <div class="pkg-price">٣٩٩ ر.س</div>
+            <div class="pkg-old">٥٦٧ ر.س</div>
+            <div class="pkg-save">وفّر ٣٠٪</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fgroup">
+        <div>
+          <input class="finput" id="fn" type="text" placeholder="الاسم الكامل *" inputmode="text" autocomplete="name">
+        </div>
+        <div>
+          <input class="finput" id="fp" type="tel" placeholder="رقم الجوال *  (05XXXXXXXX)" inputmode="numeric" autocomplete="tel" maxlength="10">
+          <span class="ferr" id="fp-err">يرجى إدخال رقم جوال صحيح (يبدأ بـ 05 ويتكون من 10 أرقام)</span>
+        </div>
+        <select class="finput fsel" id="fc">
+          <option value="">اختر مدينتك *</option>
+          <option>الرياض</option><option>جدة</option><option>مكة المكرمة</option>
+          <option>المدينة المنورة</option><option>الدمام</option><option>الخبر</option>
+          <option>الظهران</option><option>أبها</option><option>تبوك</option>
+          <option>القصيم</option><option>حائل</option><option>جازان</option>
+          <option>نجران</option><option>الباحة</option><option>عرعر</option>
+          <option>مدينة أخرى</option>
+        </select>
+        <input class="finput" id="fa" type="text" placeholder="العنوان التفصيلي (الحي، الشارع) *" inputmode="text">
+      </div>
+
+      <div style="height:1px;background:#e8e4dc;margin:14px 0 12px"></div>
+
+      <button class="sbtn" id="submitBtn" onclick="submitOrder()">
+        <div class="sbtn-main">اطلب الآن 🛒</div>
+        <div class="sbtn-sub">الدفع عند الاستلام · شحن مجاني</div>
+      </button>
+      <div class="ftrust">
+        <div class="fti"><span class="ftic">🔒</span> بياناتك آمنة</div>
+        <div class="fti"><span class="ftic">🚚</span> شحن مجاني</div>
+        <div class="fti"><span class="ftic">💵</span> كاش عند الاستلام</div>
+      </div>
+      <div class="cvr-guarantee">🛡️ ضمان استرجاع كامل خلال ٣٠ يوماً — بدون أي شروط</div>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div class="success-msg" id="successMsg">
+  <div class="suc-top">
+    <span class="sicon">✅</span>
+    <div class="st">تم استلام طلبك بنجاح</div>
+    <div class="st-sub">شكراً لثقتك بـ ARK 🌿</div>
+  </div>
+  <div class="suc-call">
+    <div class="suc-call-title">📞 <span>انتبه — خطوة مهمة</span></div>
+    <div class="suc-call-body">سيتم التواصل معك <strong>قريباً</strong> لتأكيد الطلب<br><strong>يرجى الرد على المكالمة لضمان شحن طلبك</strong></div>
+    <div class="suc-warning">⚠️ في حال عدم الرد على المكالمة، قد يتم <strong>إلغاء الطلب</strong></div>
+    <div class="suc-phone-note">📱 سيتم الاتصال على نفس الرقم الذي أدخلته</div>
+  </div>
+</div>
+
+<!-- TRUST ROW -->
+<div class="trust-row">
+  <div class="tri"><div class="tri-icon">🚚</div><div class="tri-t">شحن مجاني</div></div>
+  <div class="tri"><div class="tri-icon">💵</div><div class="tri-t">دفع عند الاستلام</div></div>
+  <div class="tri"><div class="tri-icon">🛡️</div><div class="tri-t">ضمان ٣٠ يوم</div></div>
+  <div class="tri"><div class="tri-icon">🔒</div><div class="tri-t">آمن ١٠٠٪</div></div>
+</div>
+
+<!-- PROOF NUMBERS -->
+<div class="proof">
+  <div class="pi"><div class="pin">+٢٠٠K</div><div class="pil">زجاجة مُباعة</div></div>
+  <div class="pi"><div class="pin">١٧٣٨</div><div class="pil">تقييم موثّق</div></div>
+  <div class="pi"><div class="pin">+١٤٠</div><div class="pil">دولة تصلها</div></div>
+  <div class="pi"><div class="pin">٤٫٥★</div><div class="pil">متوسط التقييم</div></div>
+</div>
+
+<!-- ══ LIFESTYLE: image 11 (outdoor woman hiker) ══ -->
+<div class="lifestyle-full">
+  <img loading="lazy" src="./images/11.webp" alt="ARK Drops outdoor" class="lifestyle-img" style="object-position:center 25%">
+  <div class="lifestyle-caption">
+    <div class="slbl" style="text-align:right;margin-bottom:8px">Fresh Focus & Energy</div>
+    <h2 class="lc-title">تعبت من الكافيين والانهيار؟<br><em>حان التغيير.</em></h2>
+    <p class="lc-body">مشروبات الطاقة تعطيك دفعة مؤقتة ثم تتركك أسوأ. قطرات ARK طاقة طبيعية تبني ولا تهدم.</p>
+    <div class="lc-checks">
+      <div class="lc-check">طاقة فورية بدون كافيين</div>
+      <div class="lc-check">تنفّس أعمق وأكسجين أكثر</div>
+      <div class="lc-check">تركيز ووضوح ذهني كامل</div>
+      <div class="lc-check">بدون سكر أو إضافات صناعية</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PRODUCT FEATURE: image 6 (product box + benefits icons) ══ -->
+<section style="background:#fff;padding:32px 16px;text-align:center">
+  <div class="slbl">منتجنا</div>
+  <h2 class="stit" style="margin-bottom:20px">ARK Drops — <em>طاقة طبيعية نقية</em></h2>
+  <div class="prod-feature">
+    <img loading="lazy" src="./images/6.webp" alt="ARK Drops benefits">
+  </div>
+</section>
+
+<!-- ══ HOW TO USE ══ -->
+<section class="sec" style="background:#f7f4ef">
+  <div class="slbl">طريقة الاستخدام</div>
+  <h2 class="stit">٤ خطوات — <em>في ثوانٍ</em></h2>
+  <!-- image 2: woman using drops (usage demo) -->
+  <div style="margin:20px auto 0;max-width:420px;border-radius:16px;overflow:hidden">
+    <img loading="lazy" src="./images/2.webp" alt="How to use ARK Drops" style="width:100%;display:block">
+  </div>
+  <div class="steps" style="margin-top:16px">
+    <div class="step"><div class="step-n">١</div><div class="step-icon">🫙</div><div class="step-t">رجّ الزجاجة</div><div class="step-d">قبل كل استخدام.</div></div>
+    <div class="step"><div class="step-n">٢</div><div class="step-icon">💧</div><div class="step-t">تحت اللسان</div><div class="step-d">٠٫٢٥ مل مباشرة.</div></div>
+    <div class="step"><div class="step-n">٣</div><div class="step-icon">⏱️</div><div class="step-t">٣٠ ثانية</div><div class="step-d">الموجة الباردة فوراً.</div></div>
+    <div class="step"><div class="step-n">٤</div><div class="step-icon">🌬️</div><div class="step-t">تنفّس عميق</div><div class="step-d">واشعر بالفرق.</div></div>
+  </div>
+</section>
+
+<!-- ══ COMPARISON: image 1 (comparison graphic) ══ -->
+<section class="sec" style="background:#fff">
+  <div class="slbl">المقارنة</div>
+  <h2 class="stit">ARK Drops <em>مقابل البدائل</em></h2>
+  <!-- image 1 is the comparison graphic — show it prominently -->
+  <div style="margin:20px auto 0;max-width:500px;border-radius:16px;overflow:hidden">
+    <img loading="lazy" src="./images/1.webp" alt="ARK Drops vs competitors" style="width:100%;display:block">
+  </div>
+  <table class="comp-table" style="margin-top:20px">
+    <thead>
+      <tr>
+        <th class="col-label">الخاصية</th>
+        <th class="col-ark">ARK Drops</th>
+        <th class="col-other">مشروبات الطاقة</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>سرعة التأثير</td><td><span class="yes">٣ ثوانٍ</span></td><td><span class="no">٣٠+ دقيقة</span></td></tr>
+      <tr><td>كافيين</td><td><span class="yes">✓ بدون كافيين</span></td><td><span class="no">✗ كافيين عالي</span></td></tr>
+      <tr><td>سكر مضاف</td><td><span class="yes">✓ بدون سكر</span></td><td><span class="no">✗ سكر مفرط</span></td></tr>
+      <tr><td>انهيار بعد الاستخدام</td><td><span class="yes">✓ لا انهيار</span></td><td><span class="no">✗ انهيار حاد</span></td></tr>
+      <tr><td>مكوّنات طبيعية</td><td><span class="yes">✓ ١٠٠٪ طبيعي</span></td><td><span class="no">✗ إضافات صناعية</span></td></tr>
+      <tr><td>عدد الجرعات</td><td><span class="yes">١٢٠ جرعة/زجاجة</span></td><td><span class="no">علبة واحدة</span></td></tr>
+      <tr><td>سعر الجرعة</td><td><span class="yes">~١٫٥ ر.س</span></td><td><span class="no">+١٠ ر.س</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══ BENEFITS ══ -->
+<section class="sec" style="background:#f7f4ef">
+  <div class="slbl">لماذا تعمل؟</div>
+  <h2 class="stit">٧ أسباب تجعلها <em>مختلفة</em></h2>
+  <div class="ben-wrap">
+    <div class="bcard"><div class="bcard-icon">🫁</div><div><div class="bcard-t">أنفاس أعمق وأكثر حرية</div><div class="bcard-d">زيت النعناع يوسّع مجاري هوائك — الفرق من القطرة الأولى.</div></div></div>
+    <div class="bcard"><div class="bcard-icon">🎯</div><div><div class="bcard-t">تركيز حادّ كالليزر</div><div class="bcard-d">زيت MCT يُغذّي دماغك بوقود نظيف حتى تُفكّر بوضوح تام.</div></div></div>
+    <div class="bcard"><div class="bcard-icon">⚡</div><div><div class="bcard-t">طاقة فورية في ٣ ثوانٍ</div><div class="bcard-d">أسرع من أي مشروب طاقة — يتجاوز الهضم كلياً.</div></div></div>
+    <div class="bcard"><div class="bcard-icon">😌</div><div><div class="bcard-t">راحة من التوتر</div><div class="bcard-d">الإحساس البارد يُطلق استجابة الهدوء الطبيعية فوراً.</div></div></div>
+    <div class="bcard"><div class="bcard-icon">🏋️</div><div><div class="bcard-t">أداء رياضي مُعزَّز</div><div class="bcard-d">مثالي قبل الجيم — أكسجين أكثر = تحمّل أطول.</div></div></div>
+    <div class="bcard"><div class="bcard-icon">🌬️</div><div><div class="bcard-t">نفَس منعش يدوم</div><div class="bcard-d">نضارة حقيقية للمواقف الاجتماعية والاجتماعات.</div></div></div>
+    <div class="bcard"><div class="bcard-icon">✅</div><div><div class="bcard-t">آمن وطبيعي ١٠٠٪</div><div class="bcard-d">بدون كافيين أو سكر. نباتي. للجميع.</div></div></div>
+  </div>
+</section>
+
+<!-- ══ FOR YOU: image 3 (personas) ══ -->
+<section class="sec" style="background:#fff;padding-top:32px;padding-bottom:32px">
+  <div class="slbl">لمن هذا المنتج؟</div>
+  <h2 class="stit">مصنوع <em>لأمثالك</em></h2>
+  <div class="for-you-img">
+    <img loading="lazy" src="./images/3.webp" alt="Made for people like you">
+  </div>
+</section>
+
+<!-- ══ PHOTO GRID: lifestyle shots ══ -->
+<section style="background:#f7f4ef;padding:32px 16px">
+  <div class="photo-grid">
+    <!-- image 7: gym woman laughing -->
+    <img loading="lazy" src="./images/7.webp" alt="ARK Drops gym woman" style="object-position:center 20%">
+    <!-- image 11: outdoor hiker woman -->
+    <img loading="lazy" src="./images/11.webp" alt="ARK Drops outdoor" style="object-position:center 30%">
+    <!-- image 10: product hero shot (wide) -->
+    <img loading="lazy" src="./images/10.webp" alt="ARK Drops product" class="wide" style="object-fit:contain;background:#fff;aspect-ratio:16/7">
+  </div>
+</section>
+
+<!-- ══ TIKTOK: images 12, 13, 14 + gym man ══ -->
+<section class="tt-section">
+  <div class="slbl" style="color:#52b788">شاهد بنفسك</div>
+  <h2 class="stit" style="color:#fff">الناس <em style="color:#52b788">تجرّبها وتشارك</em></h2>
+  <p class="ssub" style="color:#555;margin-bottom:0">آلاف المستخدمين حول العالم يشاركون تجربتهم</p>
+  <div class="tt-grid">
+    <!-- image 12: woman blazer blue bg -->
+    <div class="tt-card">
+      <img loading="lazy" src="./images/12.webp" alt="User TikTok 1" style="object-position:center 20%">
+      <div class="tt-overlay"></div>
+      <div class="tt-logo"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.13 6.33 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"/></svg></div>
+      <div class="tt-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="tt-bottom"><div class="tt-name">@arkdrops</div><div class="tt-sub">٢٣٤K مشاهدة</div></div>
+    </div>
+    <!-- image 13: woman on mountain "Airways Expanded" -->
+    <div class="tt-card">
+      <img loading="lazy" src="./images/13.webp" alt="User TikTok 2" style="object-position:center top">
+      <div class="tt-overlay"></div>
+      <div class="tt-logo"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.13 6.33 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"/></svg></div>
+      <div class="tt-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="tt-bottom"><div class="tt-name">@arkdrops</div><div class="tt-sub">٣٤١K مشاهدة</div></div>
+    </div>
+    <!-- image 14: Arabic woman "هدي اجربيه" -->
+    <div class="tt-card">
+      <img loading="lazy" src="./images/14.webp" alt="User TikTok 3" style="object-position:center 20%">
+      <div class="tt-overlay"></div>
+      <div class="tt-logo"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.13 6.33 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"/></svg></div>
+      <div class="tt-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="tt-bottom"><div class="tt-name">@arkdrops</div><div class="tt-sub">١٨٧K مشاهدة</div></div>
+    </div>
+    <!-- image 8: gym man (lifestyle) -->
+    <div class="tt-card">
+      <img loading="lazy" src="./images/8.webp" alt="User TikTok 4" style="object-position:center 30%">
+      <div class="tt-overlay"></div>
+      <div class="tt-logo"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.13 6.33 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"/></svg></div>
+      <div class="tt-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="tt-bottom"><div class="tt-name">@arkdrops</div><div class="tt-sub">٩٨K مشاهدة</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS: image 4 ══ -->
+<section class="sec" style="background:#f7f4ef">
+  <div class="slbl">آراء العملاء</div>
+  <h2 class="stit">ماذا يقول <em>عملاؤنا</em></h2>
+  <!-- image 4: "What Customers Love" with real review -->
+  <div style="border-radius:14px;overflow:hidden;margin-bottom:20px">
+    <img loading="lazy" src="./images/4.webp" alt="What customers love" style="width:100%;display:block">
+  </div>
+  <div class="t-list">
+    <div class="tcard">
+      <div class="tcard-verified">✅ عميل موثّق</div>
+      <div class="tcard-stars">★★★★★</div>
+      <div class="tcard-text">ألعب كرة قدم كل أسبوع وقطرات ARK غيّرت تنفّسي خلال المباريات. رئتاي تشعران بالانفتاح الكامل — أنصح بها كل لاعب.</div>
+      <div class="tcard-author">أحمد م.</div>
+      <div class="tcard-loc">الرياض 🇸🇦</div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-verified">✅ عميل موثّق</div>
+      <div class="tcard-stars">★★★★★</div>
+      <div class="tcard-text">كنت متشكّكاً. بعد أسبوع واحد الفرق واضح جداً في الجيم — التنفّس أسهل والتركيز أطول. الآن لا أتمرّن بدونها.</div>
+      <div class="tcard-author">خالد ر.</div>
+      <div class="tcard-loc">جدة 🇸🇦</div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-verified">✅ عميلة موثّقة</div>
+      <div class="tcard-stars">★★★★★</div>
+      <div class="tcard-text">نوبات الهلع كانت مشكلتي اليومية. بضع قطرات وتنفّس عميق وأشعر بالاتزان. طبيعي وسريع ولا أعراض جانبية.</div>
+      <div class="tcard-author">سارة ع.</div>
+      <div class="tcard-loc">الدمام 🇸🇦</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INGREDIENTS: image 5 (supplement facts) ══ -->
+<section class="sec" style="background:#fff;text-align:center">
+  <div class="slbl">ما بداخلها</div>
+  <h2 class="stit">مكوّنات نظيفة. <em>نتائج قوية.</em></h2>
+  <div class="ing-pills">
+    <span class="ipill">🌿 زيت النعناع</span>
+    <span class="ipill">🧠 زيت MCT</span>
+    <span class="ipill">❄️ النعناع الياباني</span>
+    <span class="ipill">🌱 النعناع الأخضر</span>
+    <span class="ipill">🥥 زيت جوز الهند</span>
+    <span class="ipill">🍃 ستيفيا</span>
+  </div>
+  <!-- image 5: back of bottle / supplement facts -->
+  <div style="margin:20px auto 0;max-width:300px;border-radius:14px;overflow:hidden">
+    <img loading="lazy" src="./images/5.webp" alt="Supplement Facts" style="width:100%;display:block">
+  </div>
+  <p style="font-family:'Noto Naskh Arabic',serif;font-size:12px;color:#aaa;text-align:center;margin-top:16px;line-height:1.8">جميع المكوّنات نباتية ومعتمدة · لا تحتوي على كافيين أو سكر مضاف · حلال ١٠٠٪</p>
+</section>
+
+<!-- ══ BEFORE / AFTER ══ -->
+<section class="sec" style="background:#f7f4ef;padding:32px 16px">
+  <div class="slbl">قبل وبعد</div>
+  <h2 class="stit" style="margin-bottom:16px">حياتك <em>قبل وبعد ARK Drops</em></h2>
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-header">😩 قبل</div>
+      <div class="ba-items">
+        <div class="ba-item">تعب من الصباح</div>
+        <div class="ba-item">كافيين وانهيار</div>
+        <div class="ba-item">تركيز ضعيف</div>
+        <div class="ba-item">تنفّس ثقيل</div>
+        <div class="ba-item">توتر متراكم</div>
+      </div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-header">⚡ بعد</div>
+      <div class="ba-items">
+        <div class="ba-item">طاقة في ٣ ثوانٍ</div>
+        <div class="ba-item">بدون انهيار</div>
+        <div class="ba-item">تركيز حادّ</div>
+        <div class="ba-item">تنفّس أعمق</div>
+        <div class="ba-item">هدوء وصفاء</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="sec" style="background:#fff">
+  <div class="slbl">أسئلة وأجوبة</div>
+  <h2 class="stit">كل ما تريد <em>معرفته</em></h2>
+  <div class="faqlist">
+    <div class="faqitem"><button class="faqbtn" onclick="tfaq(this)">هل قطرات ARK حلال؟<span class="faqch">+</span></button><div class="faqans">تحتوي على مكوّنات نباتية ١٠٠٪ — زيت نعناع، نعناع ياباني، زيت MCT، زيت جوز الهند، وستيفيا. لا توجد أي مشتقات حيوانية.</div></div>
+    <div class="faqitem"><button class="faqbtn" onclick="tfaq(this)">هل تحتوي على كافيين؟<span class="faqch">+</span></button><div class="faqans">لا على الإطلاق. الطاقة التي تشعر بها مصدرها تحسين تدفق الأكسجين والوضوح الذهني — وليس التحفيز الكيميائي.</div></div>
+    <div class="faqitem"><button class="faqbtn" onclick="tfaq(this)">كم تستغرق حتى تشعر بالتأثير؟<span class="faqch">+</span></button><div class="faqans">معظم المستخدمين يشعرون بالتأثير خلال ٣ إلى ١٠ ثوانٍ من وضعها تحت اللسان مباشرة.</div></div>
+    <div class="faqitem"><button class="faqbtn" onclick="tfaq(this)">كم عدد الجرعات في الزجاجة؟<span class="faqch">+</span></button><div class="faqans">١٢٠ جرعة في كل زجاجة — ما يعادل شهرين كاملين من الاستخدام اليومي.</div></div>
+    <div class="faqitem"><button class="faqbtn" onclick="tfaq(this)">هل الشحن متاح في كل السعودية؟<span class="faqch">+</span></button><div class="faqans">نعم، نوصّل لجميع مناطق ومدن المملكة بشحن مجاني والدفع عند الاستلام.</div></div>
+    <div class="faqitem"><button class="faqbtn" onclick="tfaq(this)">ما هو ضمان الاسترجاع؟<span class="faqch">+</span></button><div class="faqans">نضمن رضاك الكامل خلال ٣٠ يوماً من الاستلام — بدون أي شروط أو أسئلة. استرجاع كامل للمبلغ.</div></div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-sec">
+  <div class="cta-lbl">لا تنتظر أكثر</div>
+  <h2 class="cta-title">اطلب الآن واحصل على<br><em>شحن مجاني 🚀</em></h2>
+  <p class="cta-sub">انضم إلى +٢٠٠,٠٠٠ شخص حول العالم اختاروا الطاقة الطبيعية</p>
+  <button class="ctabtn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">اطلب الآن ←</button>
+  <div style="margin-top:16px;font-size:12px;color:#444;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+    <span>🛡️ ضمان ٣٠ يوم</span><span>🚚 شحن مجاني</span><span>💵 دفع عند الاستلام</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ftrust-row">
+    <div class="fti2"><span>✅</span> دفع عند الاستلام</div>
+    <div class="fti2"><span>📦</span> شحن مجاني</div>
+    <div class="fti2"><span>🌿</span> طبيعي ١٠٠٪</div>
+    <div class="fti2"><span>🇸🇪</span> جودة سويدية</div>
+  </div>
+  <div class="fcopy">© 2025 ARK Drops — جميع الحقوق محفوظة</div>
+</footer>
+
+<!-- STICKY BUY -->
+<div class="sticky-buy" id="stickyBuy">
+  <button class="sticky-buy-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+    🛒 اطلب الآن — شحن مجاني
+  </button>
+  <div class="sticky-buy-sub">💵 كاش عند الاستلام · 🛡️ ضمان ٣٠ يوم · ⚡ توصيل سريع</div>
+</div>
+
+<!-- POPUP -->
+<div class="notif" id="notif">
+  <div class="notif-dot"></div>
+  <div class="notif-text" id="notif-text">أحمد من الرياض طلب للتو باقة زجاجتين</div>
+  <div class="notif-time">الآن</div>
+</div>
+
+<script>
+// ── COUNTDOWN ──
+(function(){
+  var end=localStorage.getItem('ark_end');
+  if(!end||Date.now()>parseInt(end)){
+    end=Date.now()+(23*3600+59*60+Math.floor(Math.random()*60))*1000;
+    localStorage.setItem('ark_end',end);
+  }
+  function pad(n){return String(n).padStart(2,'0');}
+  function tick(){
+    var diff=Math.max(0,parseInt(end)-Date.now());
+    var h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+    [['cdh',h],['cdm',m],['cds',s],['cdh2',h],['cdm2',m],['cds2',s]].forEach(function(p){
+      var el=document.getElementById(p[0]);if(el)el.textContent=pad(p[1]);
+    });
+    if(diff>0)setTimeout(tick,1000);
+  }
+  tick();
+})();
+
+// ── LIVE VIEWERS ──
+(function(){
+  var el=document.getElementById('viewers');if(!el)return;
+  function update(){el.textContent=12+Math.floor(Math.random()*8);setTimeout(update,5000+Math.random()*8000);}
+  update();
+})();
+
+// ── STOCK ──
+(function(){
+  var elNum=document.getElementById('stock-num');
+  var elLeft=document.getElementById('stock-left');
+  var elFill=document.getElementById('stock-fill');
+  var stock=parseInt(localStorage.getItem('ark_stock')||'37');
+  function updateStock(){
+    if(elNum)elNum.textContent=stock;
+    if(elLeft)elLeft.textContent=stock;
+    var pct=Math.min(90,Math.max(12,100-(stock/200)*100));
+    if(elFill)elFill.style.width=pct+'%';
+  }
+  updateStock();
+  function maybeDecrease(){
+    if(stock>8){stock--;localStorage.setItem('ark_stock',stock);updateStock();}
+    setTimeout(maybeDecrease,(240+Math.random()*240)*1000);
+  }
+  setTimeout(maybeDecrease,(120+Math.random()*180)*1000);
+})();
+
+// ── STICKY HIDE ──
+var orderEl=document.getElementById('order');
+var stickyEl=document.getElementById('stickyBuy');
+if(orderEl&&stickyEl){
+  var obs=new IntersectionObserver(function(entries){
+    if(window.innerWidth<768)stickyEl.style.display=entries[0].isIntersecting?'none':'block';
+  },{threshold:0.1});
+  obs.observe(orderEl);
+}
+
+// ── PACKAGES ──
+var curPkg=2;
+var pkgInfo={
+  1:{name:'زجاجة واحدة',price:'١٨٩ ر.س',qty:1},
+  2:{name:'باقة زجاجتين',price:'٢٩٩ ر.س',qty:2},
+  3:{name:'باقة ٣ زجاجات',price:'٣٩٩ ر.س',qty:3}
+};
+function selPkg(n){
+  [1,2,3].forEach(function(i){document.getElementById('pkg'+i).classList.remove('sel');});
+  document.getElementById('pkg'+n).classList.add('sel');
+  curPkg=n;
+}
+
+// ── FAQ ──
+function tfaq(btn){
+  var ans=btn.nextElementSibling,ch=btn.querySelector('.faqch'),open=ans.style.display==='block';
+  document.querySelectorAll('.faqans').forEach(function(x){x.style.display='none';});
+  document.querySelectorAll('.faqch').forEach(function(x){x.textContent='+';x.classList.remove('open');});
+  if(!open){ans.style.display='block';ch.textContent='−';ch.classList.add('open');}
+}
+
+// ── SOCIAL PROOF POPUP ──
+(function(){
+  var names=['أحمد','خالد','محمد','سارة','فاطمة','عمر','عبدالله','ريم','نورة','يوسف','علي','منى'];
+  var cities=['الرياض','جدة','الدمام','مكة','المدينة','تبوك','أبها','القصيم','الخبر'];
+  var pkgs=['زجاجة واحدة','باقة زجاجتين','باقة ٣ زجاجات'];
+  var notifEl=document.getElementById('notif'),notifText=document.getElementById('notif-text');
+  if(!notifEl)return;
+  function showNotif(){
+    notifText.textContent=names[Math.floor(Math.random()*names.length)]+' من '+cities[Math.floor(Math.random()*cities.length)]+' طلب '+pkgs[Math.floor(Math.random()*pkgs.length)];
+    notifEl.classList.add('show');
+    setTimeout(function(){notifEl.classList.remove('show');},4000);
+    setTimeout(showNotif,15000+Math.random()*20000);
+  }
+  setTimeout(showNotif,8000);
+})();
+
+// ── INPUT CLEAR ERRORS ──
+document.querySelectorAll('.finput').forEach(function(el){
+  el.addEventListener('input',function(){
+    el.classList.remove('error');
+    if(el.id==='fp')document.getElementById('fp-err').classList.remove('show');
+  });
+});
+
+// ── SUBMIT ──
+function submitOrder(){
+  var name=document.getElementById('fn').value.trim();
+  var phone=document.getElementById('fp').value.trim().replace(/\s/g,'');
+  var city=document.getElementById('fc').value;
+  var address=document.getElementById('fa').value.trim();
+  document.getElementById('fp-err').classList.remove('show');
+  var hasError=false;
+  [['fn',name],['fp',phone],['fc',city],['fa',address]].forEach(function(pair){
+    var el=document.getElementById(pair[0]);
+    if(!pair[1]){el.classList.add('error');hasError=true;}
+  });
+  if(hasError){alert('⚠️ يرجى ملء جميع الحقول');return;}
+  if(!/^05\d{8}$/.test(phone)){
+    var fp=document.getElementById('fp');
+    fp.classList.add('error');
+    document.getElementById('fp-err').classList.add('show');
+    fp.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  var priceMap={1:189,2:299,3:399};
+  var pkg=pkgInfo[curPkg];
+  var orderValue=priceMap[curPkg]||299;
+  var btn=document.getElementById('submitBtn');
+  btn.disabled=true;
+  btn.querySelector('.sbtn-main').textContent='⏳ جاري إرسال الطلب...';
+
+  if(typeof fbq!=='undefined')    fbq('track','InitiateCheckout',{value:orderValue,currency:'SAR'});
+  if(typeof ttq!=='undefined')    ttq.track('InitiateCheckout',{value:orderValue,currency:'SAR'});
+  if(typeof snaptr!=='undefined') snaptr('track','START_CHECKOUT',{price:orderValue,currency:'SAR'});
+
+  document.getElementById('order').style.display='none';
+  document.getElementById('successMsg').style.display='block';
+  document.getElementById('successMsg').scrollIntoView({behavior:'smooth',block:'center'});
+  if(stickyEl)stickyEl.style.display='none';
+
+  var valNum=parseFloat(orderValue),qtyNum=parseInt(pkg.qty);
+  if(typeof ttq!=='undefined')    ttq.track('Purchase',{content_name:pkg.name,quantity:qtyNum,value:valNum,currency:'SAR'});
+  if(typeof fbq!=='undefined')    fbq('track','Purchase',{value:valNum,currency:'SAR',content_name:pkg.name,content_type:'product',num_items:qtyNum});
+  if(typeof snaptr!=='undefined') snaptr('track','PURCHASE',{price:valNum,currency:'SAR',item_category:'ARK Drops'});
+  if(typeof gtag!=='undefined')   gtag('event','purchase',{currency:'SAR',value:valNum,items:[{item_name:pkg.name,quantity:qtyNum,price:valNum}]});
+
+  var SHEET_URL='https://script.google.com/macros/s/AKfycbylxjQEw_1rQOf8LeMSJKw2KWJML8TKQXMJpFAcCPz_YRBT_fNGTTadIT5bnE_7T-81/exec';
+  var ref=document.referrer;
+  var source=new URLSearchParams(window.location.search).get('utm_source')||
+    (ref.indexOf('tiktok')>-1?'tiktok':ref.indexOf('snapchat')>-1?'snapchat':(ref.indexOf('facebook')>-1||ref.indexOf('instagram')>-1)?'facebook':'direct');
+  fetch(SHEET_URL,{
+    method:'POST',mode:'no-cors',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:new URLSearchParams({
+      timestamp:new Date().toLocaleString('ar-SA',{timeZone:'Asia/Riyadh'}),
+      name:name,phone:phone,city:city,address:address.substring(0,200),
+      package:pkg.name,price:pkg.price,qty:pkg.qty,orderValue:orderValue,source:source
+    }).toString()
+  }).catch(function(){
+    try{
+      var mini={name:name,phone:phone,city:city,pkg:pkg.name,val:orderValue,src:source};
+      new Image().src=SHEET_URL+'?data='+encodeURIComponent(JSON.stringify(mini));
+    }catch(e){}
+  });
+}
+</script>
+
+<!-- TRACKING PIXELS (end of body) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG63SCDVGZ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-LG63SCDVGZ',{send_page_view:true});
+</script>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','778731385018899');
+fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'ARK Drops',content_category:'Natural Performance',currency:'SAR',value:299});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=778731385018899&ev=PageView&noscript=1"/></noscript>
+
+<!-- TikTok Pixel -->
+<script>
+!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript";o.async=!0;o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+ttq.load('D2KM92JC77U9PLHEPTMG');
+ttq.page();
+}(window,document,'ttq');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=D2KM92JC77U9PLHEPTMG&lib=ttq&event=PageView"/></noscript>
+
+<!-- Snapchat Pixel -->
+<script>
+(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function(){a.handleRequest?
+a.handleRequest.apply(a,arguments):a.queue.push(arguments)};a.queue=[];
+var s='script';r=t.createElement(s);r.async=!0;r.src=n;
+var u=t.getElementsByTagName(s)[0];u.parentNode.insertBefore(r,u);
+})(window,document,'https://sc-static.net/scevent.min.js');
+snaptr('init','a723e11c-e6eb-4038-8633-be2477ebb6ee',{'user_email':''});
+snaptr('track','PAGE_VIEW');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://tr.snapchat.com/p?pid=a723e11c-e6eb-4038-8633-be2477ebb6ee&ev=PAGE_VIEW"/></noscript>
+
+</body>
+</html>
